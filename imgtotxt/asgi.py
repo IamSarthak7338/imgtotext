@@ -1,16 +1,3 @@
-"""
-ASGI config for imgtotxt project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/
-"""
-
-import os
-
-from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'imgtotxt.settings')
-
-application = get_asgi_application()
+version https://git-lfs.github.com/spec/v1
+oid sha256:ccfdc4f526d8ed815502b4b9ae81381309918286022d2aab29c36d151d6c1df4
+size 409

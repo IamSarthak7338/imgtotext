@@ -1,12 +1,3 @@
-from django.urls import path
-from . import views
-from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf.urls.static import static
-
-urlpatterns = [
-    path('',views.home,name='home'),
-    path('convert2txt',views.convert2txt,name = 'convert2txt')
-]
-urlpatterns+=staticfiles_urlpatterns()
-urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0e9605ec6a2131720d4961cbcc895dc614690f6c4113a80390f38a77ac42cc12
+size 436
