@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image 2 Text</title>
+    <style>
+    body{
+    background-image:url('/static/wp.jpg');
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+    #title{
+    margin-top:20px;
+    width:43%;
+    }
+	#cover{
+margin-top:20px;
+	padding-top:15px;
+	padding-bottom:15px;
+	background:#FAFAFA;
+
+	width:70%;
+	transition-property: width;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    opacity:80%;
+    overflow-x:hidden;
+
+	}
+	#cover:hover{
+	width:80%;
+	}
+
+	#img{
+	margin-top:20px;
+
+    height:400px;
+	}
+	#txt-holder{
+	margin-top:20px;
+	background-color:#D4D4D4;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:80%;
+	}
+		#submit{
+	border:none;
+	background-color:#54B7C4;
+	color:white;
+	margin-top:20px;
+	margin-bottom:5px;
+	width:30%;
+	font-family:Arial;
+	height:50px;
+	}
+    </style>
+</head>
+<body>
+<center>
+<img src="static/title.png" id="title">
+<br>
+
+<div id="cover">
+    <div id="image-holder">
+        <img src={{url}} id="img">
+    </div>
+
+    <div id = "txt-holder">
+        <pre>{{result}}</pre>
+    </div>
+</div>
+    <a href="http://127.0.0.1:8000/"><button id="submit">BACK</button></a>
+
+
+</center>
+
+
+
+</body>
+</html>

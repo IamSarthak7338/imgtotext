@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image 2 Text</title>
+    <style>
+    body{
+    background-image:url('/static/wp.jpg');
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+    #title{
+    margin-top:20px;
+    width:43%;
+    }
+	#cover{
+margin-top:20px;
+	padding-top:15px;
+	padding-bottom:15px;
+	background:#FAFAFA;
+	width:70%;
+	transition-property: width;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    opacity:80%;
+    overflow-x:hidden;
+
+	}
+	#cover:hover{
+	width:80%;
+	}
+	#cover-txt{
+	font-size:20px;
+	font-family:'Dosis', sans-serif;
+	color:#525252;
+	}
+	#file-txt{
+	font-size:15px;
+	font-family:'Dosis', sans-serif;
+	color:#525252;
+	}
+	#submit{
+	border:none;
+	background-color:#54B7C4;
+	color:white;
+	margin-top:20px;
+	margin-bottom:5px;
+	width:90%;
+	font-family:Arial;
+	height:50px;
+	display:none;
+	}
+	#img{
+	margin-top:20px;
+
+    height:400px;
+	display:none;
+	}
+    </style>
+</head>
+<body>
+<center>
+<img src="static/title.png" id="title">
+<br>
+<form action="convert2txt" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div id="cover">
+<input type="file" id="file-btn" name="file" hidden/>
+<label for="file-btn" id="cover-txt"><b>UPLOAD</b></label>
+
+    <div id="image-holder">
+        <img src="#" id="img">
+    </div>
+      <br>
+    <span id="file-txt">{{file_txt}}</span>
+    <br>
+    <input type="submit" id="submit">
+</div>
+</form>
+
+
+</center>
+
+<script>
+const actualBtn = document.getElementById('file-btn');
+
+const fileChosen = document.getElementById('file-txt');
+const btn = document.getElementById('submit');
+
+
+actualBtn.addEventListener('change', function(){
+	var imgs= document.getElementById('img');
+	imgs.style.display = 'block';
+	btn.style.display = 'block';
+	imgs.src = URL.createObjectURL(this.files[0]);
+
+
+  fileChosen.textContent = this.files[0].name;
+
+})
+
+
+</script>
+
+</body>
+</html>
